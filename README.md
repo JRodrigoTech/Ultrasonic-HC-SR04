@@ -6,8 +6,7 @@ Features:
  - 3 ms of TimeOut (51 cm)
  - Support for more than one ultrasonic sensor
 
-
-
+English Wiki: https://github.com/elrodri/Ultrasonic-HC-SR04/wiki
 
 Spanish Links:
  - http://www.ardublog.com/library-for-arduino-ultrasonic-ranging-hc-sr04/
