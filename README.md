@@ -1,9 +1,9 @@
-Ultrasonic-HC-SR04
+Ultrasonic-HC-SR04 for Arduino
 ==================
 
 Features:
  - Compatible with the Arduino IDE 1.0.1 or lower
- - 3 ms of TimeOut (51 cm) (not 1 second)
+ - 3 ms of TimeOut (51 cm)
  - Support for more than one ultrasonic sensor
 
 
