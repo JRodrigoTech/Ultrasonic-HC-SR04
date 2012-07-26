@@ -1,4 +1,4 @@
-Ultrasonic-HC-SR04 for Arduino
+Ultrasonic HC-SR04 library for Arduino IDE
 ==================
 
 Features:
