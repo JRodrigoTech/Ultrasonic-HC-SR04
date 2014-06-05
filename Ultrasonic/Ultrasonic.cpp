@@ -1,8 +1,8 @@
 // Ultrasonic - Library for HR-SC04 Ultrasonic Ranging Module.
-// Rev.4 (06/2012)
-// J.Rodrigo ( http://www.jra.so )
-// more info at http://www.ardublog.com
-// GitHub: https://github.com/elrodri/Ultrasonic-HC-SR04
+// GitHub: https://github.com/JRodrigoTech/Ultrasonic-HC-SR04
+// #### LICENSE ####
+// This code is licensed under Creative Commons Share alike 
+// and Attribution by J.Rodrigo ( http://www.jrodrigo.net ).
 
 #if ARDUINO >= 100
   #include "Arduino.h"
@@ -18,7 +18,7 @@ Ultrasonic::Ultrasonic(int TP, int EP)
    pinMode(EP,INPUT);
    Trig_pin=TP;
    Echo_pin=EP;
-   Time_out=3000;  // 30ms 5 metros // 3ms 50cm
+   Time_out=3000;  // 30ms = 5 m // 3ms = 50cm
 }
 
 Ultrasonic::Ultrasonic(int TP, int EP, long TO)
@@ -38,7 +38,8 @@ long Ultrasonic::Timing()
   delayMicroseconds(10);
   digitalWrite(Trig_pin, LOW);
   duration = pulseIn(Echo_pin,HIGH,Time_out);
-  if ( duration == 0 ) {duration = Time_out;}
+  if ( duration == 0 ) {
+	duration = Time_out; }
   return duration;
 }
 
@@ -46,9 +47,9 @@ long Ultrasonic::Ranging(int sys)
 {
   Timing();
   if (sys) {
-  distacne_cm = duration /29 / 2 ;
-  return distacne_cm;
+	distacne_cm = duration /29 / 2 ;
+	return distacne_cm;
   } else {
-  distance_inc = duration / 74 / 2;
-  return distance_inc; }
+	distance_inc = duration / 74 / 2;
+	return distance_inc; }
 }
