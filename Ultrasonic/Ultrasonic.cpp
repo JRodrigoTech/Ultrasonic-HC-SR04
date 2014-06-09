@@ -3,6 +3,7 @@
 // #### LICENSE ####
 // This code is licensed under Creative Commons Share alike 
 // and Attribution by J.Rodrigo ( http://www.jrodrigo.net ).
+// Modified by Javier Herrera Serpa (Daklon)
 
 #if ARDUINO >= 100
   #include "Arduino.h"
@@ -46,10 +47,15 @@ long Ultrasonic::Timing()
 long Ultrasonic::Ranging(int sys)
 {
   Timing();
-  if (sys) {
-	distacne_cm = duration /29 / 2 ;
-	return distacne_cm;
-  } else {
+  if (sys == 1) {
+	distance_cm = duration /29 / 2 ;
+	return distance_cm;
+
+  } else if (sys == 2){
+	distance_mm = duration /2.915 / 2 ;
+	return distance_mm;
+
+  } else if (sys == 3){
 	distance_inc = duration / 74 / 2;
 	return distance_inc; }
 }
