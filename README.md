@@ -8,7 +8,7 @@ Features:
 
 Wiki
 ==================
-- [How to change the default TiemOut?](https://github.com/JRodrigoTech/Ultrasonic-HC-SR04/wiki/Change-defauld-TimeOut)
+- [How to change the default TimeOut?](https://github.com/JRodrigoTech/Ultrasonic-HC-SR04/wiki/Change-defauld-TimeOut)
 - [How to plug the Ultrasonic HC-SR04 into the Arduino using the example PlugAndPlay](https://github.com/JRodrigoTech/Ultrasonic-HC-SR04/wiki/Plug-&-Play)
 
 
