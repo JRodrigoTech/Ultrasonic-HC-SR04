@@ -1,8 +1,9 @@
 // Ultrasonic - Library for HR-SC04 Ultrasonic Ranging Module.
 // GitHub: https://github.com/JRodrigoTech/Ultrasonic-HC-SR04
 // #### LICENSE ####
-// This code is licensed under Creative Commons Share alike 
+// This code is licensed under Creative Commons Share alike
 // and Attribution by J.Rodrigo ( http://www.jrodrigo.net ).
+// Modified by Sebastian Tellez (@gorrotowi)
 
 #if ARDUINO >= 100
   #include "Arduino.h"
@@ -47,9 +48,17 @@ long Ultrasonic::Ranging(int sys)
 {
   Timing();
   if (sys) {
-	distacne_cm = duration /29 / 2 ;
-	return distacne_cm;
-  } else {
-	distance_inc = duration / 74 / 2;
-	return distance_inc; }
+    switch(sys)
+      case 0:
+        distance = duration /29 / 2 ;
+      break;
+      case 1:
+        distance = duration /2.915 / 2 ;
+      break;
+      case 2:
+        distance = duration / 74 / 2;
+      break;
+    }
+    return distance;
+  }
 }
