@@ -1,6 +1,6 @@
 // Ultrasonic - Library for HR-SC04 Ultrasonic Ranging Module.
 // Rev.4 (06/2012)
-// J.Rodrigo ( www.jra.so )
+// J.Rodrigo ( www.jrodrigo.net )
 // more info at www.ardublog.com
 
 #include <Ultrasonic.h>
