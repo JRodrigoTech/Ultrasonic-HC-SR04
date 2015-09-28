@@ -28,7 +28,7 @@ class Ultrasonic
     int Trig_pin;
     int Echo_pin;
 	long Time_out;
-    long duration,distacne_cm,distance_inc;
+    long duration,distance_cm,distance_inc;
 };
 
 #endif
