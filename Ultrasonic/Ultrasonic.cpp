@@ -48,6 +48,7 @@ long Ultrasonic::Ranging(int sys)
 {
   Timing();
   if (sys) {
+<<<<<<< HEAD
     switch(sys)
       case 0:
         distance = duration /29 / 2 ;
@@ -61,4 +62,11 @@ long Ultrasonic::Ranging(int sys)
     }
     return distance;
   }
+=======
+	distance_cm = duration /29 / 2 ;
+	return distance_cm;
+  } else {
+	distance_inc = duration / 74 / 2;
+	return distance_inc; }
+>>>>>>> master
 }
