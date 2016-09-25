@@ -4,12 +4,6 @@
 // This code is licensed under Creative Commons Share alike 
 // and Attribution by J.Rodrigo ( http://www.jrodrigo.net ).
 
-#if ARDUINO >= 100
-  #include "Arduino.h"
-#else
-  #include "WProgram.h"
-#endif
-
 #include "Ultrasonic.h"
 
 Ultrasonic::Ultrasonic(int TP, int EP)
@@ -38,18 +32,20 @@ long Ultrasonic::Timing()
   delayMicroseconds(10);
   digitalWrite(Trig_pin, LOW);
   duration = pulseIn(Echo_pin,HIGH,Time_out);
-  if ( duration == 0 ) {
-	duration = Time_out; }
+  if(duration == 0){
+	  duration = Time_out; 
+  }
   return duration;
 }
 
 long Ultrasonic::Ranging(int sys)
 {
   Timing();
-  if (sys) {
-	distance_cm = duration /29 / 2 ;
-	return distance_cm;
-  } else {
-	distance_inc = duration / 74 / 2;
-	return distance_inc; }
+  if(sys){
+	  distance_cm = duration /29 / 2 ;
+	  return distance_cm;
+  }else{
+	  distance_inc = duration / 74 / 2;
+	  return distance_inc; 
+  }
 }
