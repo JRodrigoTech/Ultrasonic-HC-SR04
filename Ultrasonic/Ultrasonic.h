@@ -1,7 +1,7 @@
 // Ultrasonic - Library for HR-SC04 Ultrasonic Ranging Module.
 // GitHub: https://github.com/JRodrigoTech/Ultrasonic-HC-SR04
 // #### LICENSE ####
-// This code is licensed under Creative Commons Share alike 
+// This code is licensed under Creative Commons Share alike
 // and Attribution by J.Rodrigo ( http://www.jrodrigo.net ).
 
 #ifndef Ultrasonic_h
@@ -20,15 +20,14 @@ class Ultrasonic
 {
   public:
     Ultrasonic(int TP, int EP);
-	Ultrasonic(int TP, int EP, long TO);
+	  Ultrasonic(int TP, int EP, long TO);
     long Timing();
     long Ranging(int sys);
 
   private:
     int Trig_pin;
     int Echo_pin;
-	long Time_out;
-    long duration,distance_cm,distance_inc;
+	  long Time_out, duration;
 };
 
 #endif
