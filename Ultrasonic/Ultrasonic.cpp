@@ -13,42 +13,34 @@
 #include "Ultrasonic.h"
 
 Ultrasonic::Ultrasonic(int TP, int EP)
-{
-   pinMode(TP,OUTPUT);
-   pinMode(EP,INPUT);
-   Trig_pin=TP;
-   Echo_pin=EP;
-   Time_out=3000;  // 3000 µs = 50cm // 30000 µs = 5 m
+  :trigger_pin(TP), echo_pin(EP), time_out(3000) { // 3000 µs = 50cm // 30000 µs = 5 m
+
+   pinMode(TP, OUTPUT);
+   pinMode(EP, INPUT);
 }
 
 Ultrasonic::Ultrasonic(int TP, int EP, long TO)
-{
-   pinMode(TP,OUTPUT);
-   pinMode(EP,INPUT);
-   Trig_pin=TP;
-   Echo_pin=EP;
-   Time_out=TO;
+  :trigger_pin(TP), echo_pin(EP), time_out(TO) {
+
+   pinMode(TP, OUTPUT);
+   pinMode(EP, INPUT);
 }
 
-long Ultrasonic::Timing()
-{
-  digitalWrite(Trig_pin, LOW);
+long Ultrasonic::Timing() {
+  digitalWrite(trigger_pin, LOW);
   delayMicroseconds(2);
-  digitalWrite(Trig_pin, HIGH);
+
+  digitalWrite(trigger_pin, HIGH);
   delayMicroseconds(10);
-  digitalWrite(Trig_pin, LOW);
 
-  duration = pulseIn(Echo_pin,HIGH,Time_out);
+  digitalWrite(trigger_pin, LOW);
 
-  return duration == 0 ? Time_out : duration;
+  duration = pulseIn(echo_pin, HIGH,time_out);
+
+  return duration == 0 ? time_out : duration;
 }
 
-long Ultrasonic::Ranging(int sys)
-{
+long Ultrasonic::Ranging(bool sys) {
   Timing();
-
-  if (sys)
-    return duration /29 / 2;
-  else
-	  return duration / 74 / 2;
+  return sys ? duration /29 / 2 : duration / 74 / 2;
 }
