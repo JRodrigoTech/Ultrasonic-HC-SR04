@@ -18,15 +18,17 @@
 
 class Ultrasonic {
   public:
+    //Construtores.
     Ultrasonic(int TP, int EP);
 	  Ultrasonic(int TP, int EP, long TO);
-    
-    long Timing();
-    long Ranging(bool sys);
 
+    //Funcoes.
+    void Timing();
+    long Ranging(int sys);
+    void Config();
   private:
-    int trigger_pin, echo_pin;
-	  long time_out, duration;
+    int trigPin, echoPin;
+	  long  timeOut, duration;
 };
 
 #endif
