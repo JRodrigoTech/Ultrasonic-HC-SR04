@@ -34,6 +34,7 @@ void Ultrasonic::Timing() {
 
   if (duration == 0)
 	 this->duration = this->timeOut;
+   return;
 }
 
 long Ultrasonic::Ranging(int sys) {
